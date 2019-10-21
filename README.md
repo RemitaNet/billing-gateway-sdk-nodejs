@@ -8,7 +8,8 @@ To install the `remita-billing-gateway` package, run the following command.
 npm install remita-billing-gateway
 ```
 ## Requirements
-*  
+*  Node 10.16.3 or higher
+*  Javascript IDE
 
 ## Dependency
 *  node-fetch
@@ -27,11 +28,11 @@ Properties such as public_key, secret_key, and environment are mandatory while r
 
 |Field       | Type    | Required   | Description   |   
 | ---        | ------  | -----------| -------- |   
-| publicKey  | str  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
-| secretKey  | str  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
-|environment| str  | Yes        | SetEnvironment.DEMO for Demo environment, While SetEnvironment.LIVE for Production environment.
-| readTimeOut | int | No| The timeout on waiting to read data.
-| connectionTimeOut | int | No | The timeout in making the initial connection.
+| publicKey  | String  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
+| secretKey  | String  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
+|environment| String  | Yes        | SetEnvironment.DEMO for Demo environment, While SetEnvironment.LIVE for Production environment.
+| readTimeOut | Number | No| The timeout on waiting to read data.
+| connectionTimeOut | Number | No | The timeout in making the initial connection.
 
 ### Sample
 ```code
