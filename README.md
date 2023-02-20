@@ -2,7 +2,7 @@
 Node.JS SDK for Remita Billing Gateway
 
 ## Package 
-To install the `remita-billing-gateway` package, run the following command.
+To install the `remita-billing-gateway` package, run the following command on your machine.
 
 ```
 npm install remita-billing-gateway
