@@ -269,4 +269,4 @@ paymentStatusResponse returns promise value
 ---
     
 ## Support
-- For all other support needs, support@remita.net
+- Join our Slack community and support channel at http://bit.ly/RemitaDevSlack. For all other support needs, support@remita.net
