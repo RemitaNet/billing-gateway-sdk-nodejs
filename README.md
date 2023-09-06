@@ -1,28 +1,38 @@
 # REMITA BILLER GATEWAY
+
+---
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
+
+---
+## Overview
 Node.JS SDK for Remita Billing Gateway
 
-## Package 
+Integrating to Remita for Biller payments SDK enables your customers make payments to billers on Remita through your platform. This provides you with the capability to offer your customers access to the vast array of billers and merchants, including schools, churches, service providers and the Federal Government ministries, departments and agencies (MDAs) available on Remita to purchase and subscribe to their various products and services.
+
+The process involves your customers selecting a biller to pay via your platform. They will supply payment details and confirm the details so you can debit their account with AmountDue to credit a designated Funds Holding Account. Your customers will be emailed Remita receipts (which are FGN MDA-recognized for TSA-bound payments) for each transaction.
+
+
+## Installation
+### Package 
 To install the `remita-billing-gateway` package, run the following command on your machine.
 
 ```
 npm install remita-billing-gateway
 ```
-## Requirements
+### Requirements
 *  Node 10.16.3 or higher
 *  Javascript IDE
 
-## Dependency
+### Dependency
 *  node-fetch
 
-## Overview
-Integrating to Remita for Biller payments SDK enables your customers make payments to billers on Remita through your platform. This provides you with the capability to offer your customers access to the vast array of billers and merchants, including schools, churches, service providers and the Federal Government ministries, departments and agencies (MDAs) available on Remita to purchase and subscribe to their various products and services.
-
-The process involves your customers selecting a biller to pay via your platform. They will supply payment details and confirm the details so you can debit their account with AmountDue to credit a designated Funds Holding Account. Your customers will be emailed Remita receipts (which are FGN MDA-recognized for TSA-bound payments) for each transaction.
-
-## Prerequisites
+### Prerequisites
 Prior to using the SDK, you need to set up an integration profile on [Remita](https://login.remita.net) if you are not already registered as a merchant/biller on the platform. Each method call will require you to pass the Public key/Secret key. Your public and secret keys are located at the Billing page on your profile. After you login, click "Setup Billing" at your dashboard >> click "Proceed" on the "Yes" option for the integration question that comes up >> to display the Public/Secret key.
 
-## Configuration
+### Configuration
 All biller credentials needed to use the SDK are being setup by instantiating the Credential Class and set properties in this class accordingly.
 Properties such as public_key, secret_key, and environment are mandatory while read_timeout and connection_timeout can be set to zero (0).
 
@@ -50,8 +60,8 @@ Properties such as public_key, secret_key, and environment are mandatory while r
     const remitaBillingGateway =  new RemitaService.RemitaBillingGateway(credential);
 ```
 
-
-## Methods
+## Usage
+### Methods
 #### Get Biller(s)
 This returns a list of the billers, merchants and MDAs available on Remita.
 
@@ -62,7 +72,7 @@ This returns a list of the billers, merchants and MDAs available on Remita.
         .then((body)=>body)
         .catch((err)=>err);
 ```
-### billerList attributes
+#### billerList attributes
 billerList returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -83,7 +93,7 @@ This returns a list of products and services associated with specified billers o
         .catch((err)=>err);
 ```
 
-### serviceList attributes
+#### serviceList attributes
 serviceList returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -104,7 +114,7 @@ Custom fields are additional information specific to a service/product offered f
         .then((body)=>body)
         .catch((err)=>err);
 ```
-### customFieldList attributes
+#### customFieldList attributes
 customFieldList returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -129,7 +139,7 @@ If your customer already has a Remita Retrieval Reference (RRR) before logging o
         .then((body)=>body)
         .catch((err)=>err);
 ```
-### getRrrDetail attributes
+#### getRrrDetail attributes
 getRrrDetail returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -165,7 +175,7 @@ You need to make a request for Remita to execute a validation operation on the d
 
 ```
 
-### validateRequestResponse attributes
+#### validateRequestResponse attributes
 validateRequestResponse returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -200,7 +210,7 @@ In order to complete the transaction through the Remita Payment Gateway, a Remit
         .catch((err)=>err);
 
 ```
-### genRrrResponse attributes
+#### genRrrResponse attributes
 genRrrResponse returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -231,7 +241,7 @@ After you have debit the customer with the RRR amount (amountDue) to process the
         .then((body)=>body)
         .catch((err)=>err);
 ```
-### notification attributes
+#### notification attributes
 notification returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -255,7 +265,7 @@ You may need to enquire that status of biller payments your customers have made 
         .then((body)=>body)
         .catch((err)=>err);
 ```
-### paymentStatusResponse attributes
+#### paymentStatusResponse attributes
 paymentStatusResponse returns promise value
 | Name  | Type    | 
 | ---   | ------  | 
@@ -268,5 +278,18 @@ paymentStatusResponse returns promise value
 
 ---
     
-## Support
-- Join our Slack community and support channel at http://bit.ly/RemitaDevSlack. For all other support needs, support@remita.net
+
+## Contributing
+- To contribute to this repo, follow these guidelines for creating issues, proposing new features, and submitting pull requests:
+
+Fork the repository.
+1. Create a new branch: `git checkout -b "feature-name"`
+2. Make your changes and commit: `git commit -m "added some new features"`
+3. Push your changes: `git push origin feature-name`
+4. Submit a Pull Request (PR).
+
+### Useful links
+* Join our Slack Developer/Support channel on (http://bit.ly/RemitaDevSlack)
+    
+### Support
+- For all other support needs, support@remita.net
