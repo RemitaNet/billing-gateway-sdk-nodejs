@@ -1,13 +1,13 @@
 {
   "name": "remita-billing-gateway",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "remita.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mfonido Mark",
   "license": "ISC",
   "dependencies": {
     "JSON": "^1.0.0",

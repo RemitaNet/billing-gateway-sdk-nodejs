@@ -9,7 +9,7 @@ function setBillingEnvironment(credentials) {
     envMap.set('ENVIRONMENT', credentials.environment);
     switch(credentials.environment) {
         case SetEnvironment.DEMO:
-            test_url = "https://remitademo.net/remita/exapp/api/v1/send/api/bgatesvc/billing/";
+            test_url = "https://demo.remita.net/remita/exapp/api/v1/send/api/bgatesvc/billing/";
             envMap.set('GET_BILLER_URL', test_url + "billers");
             envMap.set('GET_URL', test_url);
             envMap.set('GET_CUSTOM_FIELD_URL', test_url + "/servicetypes/");
